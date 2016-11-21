@@ -39,6 +39,7 @@ import org.modeshape.jcr.api.index.IndexDefinitionTemplate;
 import org.modeshape.jcr.api.index.IndexManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -182,6 +183,7 @@ public class ModeshapeLocalIndexesTest {
         for (IndexDefinition def : indexDefinitions.values()) {
             String indexName = def.getName();
             IndexManager.IndexStatus indexStatus = indexManager.getIndexStatus("local", indexName, "default");
+            Assert.assertEquals(indexStatus, IndexManager.IndexStatus.ENABLED);
             LOGGER.info("Index {} status: {}", indexName, indexStatus.toString());
         }
     }

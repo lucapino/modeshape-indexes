@@ -9,7 +9,7 @@
     <logger name="org.modeshape.jcr" additivity="false" level="INFO">
         <appender-ref ref="stdout"/>
     </logger>
-    <logger name="org.elasticsearch" additivity="false" level="ERROR">
+    <logger name="org.elasticsearch" additivity="false" level="WARN">
         <appender-ref ref="stdout"/>
     </logger>
     <root level="INFO">
