@@ -1,0 +1,35 @@
+{
+    "name": "repository",
+    "monitoring": {
+        "enabled": true
+    },
+    "workspaces": {
+        "default": "default",
+        "allowCreation": true
+    },
+    "storage": {
+        "persistence": {
+            "type": "db",
+            "connectionUrl": "jdbc:h2:file:./target/repoLucene/db/modeshape/modeshape;AUTO_SERVER=TRUE",
+            "driver": "org.h2.Driver"
+        },
+        "binaryStorage": {
+            "type": "file",
+            "directory": "./target/repoLucene/repository/binaries",
+            "trash": "./target/repoLucene/repository/binaries/trash"
+        }
+    },
+    "indexProviders": {
+        "lucene": {
+            "classname": "lucene",
+            "directory": "./target/repoLucene/repository/indexes"
+        }
+    },
+
+    "journaling": {
+        "location": "./target/repoLucene/repository/journal"
+    },
+    "reindexing": {
+        "async": false
+    }
+}

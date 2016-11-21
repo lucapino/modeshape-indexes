@@ -1,0 +1,35 @@
+{
+    "name": "repository",
+    "monitoring": {
+        "enabled": true
+    },
+    "workspaces": {
+        "default": "default",
+        "allowCreation": true
+    },
+    "storage": {
+        "persistence": {
+            "type": "db",
+            "connectionUrl": "jdbc:h2:file:./target/repoLocal/db/modeshape/modeshape;AUTO_SERVER=TRUE",
+            "driver": "org.h2.Driver"
+        },
+        "binaryStorage": {
+            "type": "file",
+            "directory": "./target/repoLocal/repository/binaries",
+            "trash": "./target/repoLocal/repository/binaries/trash"
+        }
+    },
+    "indexProviders": {
+        "local": {
+            "classname": "org.modeshape.jcr.index.local.LocalIndexProvider",
+            "directory": "target/repoLocal/indexes"
+        }
+    },
+
+    "journaling": {
+        "location": "./target/repoLocal/repository/journal"
+    },
+    "reindexing": {
+        "async": false
+    }
+}

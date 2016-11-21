@@ -1,0 +1,34 @@
+{
+    "name": "repository",
+    "monitoring": {
+        "enabled": true
+    },
+    "workspaces": {
+        "default": "default",
+        "allowCreation": true
+    },
+    "storage": {
+        "persistence": {
+            "type": "db",
+            "connectionUrl": "jdbc:h2:file:./target/repoElasticsearch/db/modeshape/modeshape;AUTO_SERVER=TRUE",
+            "driver": "org.h2.Driver"
+        },
+        "binaryStorage": {
+            "type": "file",
+            "directory": "./target/repoElasticsearch/repository/binaries",
+            "trash": "./target/repoElasticsearch/repository/binaries/trash"
+        }
+    },
+    "indexProviders": {
+        "elasticsearch": {
+            "classname": "elasticsearch"
+        }
+    },
+
+    "journaling": {
+        "location": "./target/repoElasticsearch/repository/journal"
+    },
+    "reindexing": {
+        "async": false
+    }
+}

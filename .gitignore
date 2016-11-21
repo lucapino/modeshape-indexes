@@ -1,0 +1,15 @@
+##########################
+# Maven files and folder #
+##########################
+/target/
+###############################
+# Eclipse configuration files #
+###############################
+.classpath
+.project
+.settings/*
+##########################
+# Netbeans configuration #
+##########################
+nb-configuration.xml
+nbactions.xml
